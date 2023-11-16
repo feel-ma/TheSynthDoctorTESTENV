@@ -89,25 +89,31 @@
     document.write(formattedTime);
   </script>
     </div>
-    <div class="col mx-auto px-3">
+    <div class="col mx-auto px-3 total-case-price">
     <strong>Total Price:</strong> {{totalPrice}}
     </div>
   </div>
 </div>
 <script>
-  // Assuming you have access to the work object and its properties
-  const totalUsedPrice = {{totalUsedPrice}}; // Replace this with the actual total price of used parts
-  const hourlyRate = 60; // Hourly rate in euros
-  const fixedFee = 30; // Fixed fee in euros
-  const hoursWorked = {{work.hours}}; // Replace with actual hours worked
+  document.addEventListener('DOMContentLoaded', function() {
+    // Assuming you have access to the work object and its properties
+    const totalUsedPrice = {{totalUsedPrice}}; // Replace this with the actual total price of used parts
+    const hourlyRate = 60; // Hourly rate in euros
+    const fixedFee = 30; // Fixed fee in euros
+    const hoursWorked = {{work.hours}}; // Replace with actual hours worked
 
-  const hoursPrice = hoursWorked * hourlyRate;
-  const totalPrice = totalUsedPrice + hoursPrice + fixedFee;
+    const hoursPrice = hoursWorked * hourlyRate;
+    const totalPrice = totalUsedPrice + hoursPrice + fixedFee;
 
-  // Update the total price in the document
-  document.write(totalPrice);
+    // Update the total price in the document
+    const totalPriceElement = document.querySelector('.total-case-price');
+    if (totalPriceElement) {
+      totalPriceElement.textContent = 'Total Repair Price: ' + totalPrice + ' euros';
+    }
+  });
+
+  // ... rest of your scripts
 </script>
-
 <div class="container">
   <h1 class="case-heading">CASE DESCRIPTION</h1>
   <div class="case-description">{{work.description}}</div>
