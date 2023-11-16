@@ -163,6 +163,7 @@ router.get("/repair", (req, res) => {
 router.post("/repair", async (req, res) => {
   try {
     const newRepair = req.body;
+    newRepair.droppOffDate = moment(newRepair.droppOffDate).format('YYYY-MM-DDTHH:mm');
     console.log(newRepair);
     await Repair.create(newRepair);
     res.render("success", {gKey, repairMessage: "Form submitted successfully!" , userInSession: req.session.currentUser});
