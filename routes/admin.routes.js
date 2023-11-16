@@ -23,16 +23,7 @@ router.get("/projects",  isAdmin, async (req, res, next) => {
   const pending = [];
   const active = [];
   const closed = [];
-  let messages = []
-
-  //const admin = await User.findOne({ email: "test@test.test" }); 
-
-
-  if(admin.messages){
-    messages = admin.messages
-  }
-
-
+ 
   Repair.find().then((result) => {
     for (one of result) {
       if (one.status === 0 || one.status == 1 || one.status == 5)
