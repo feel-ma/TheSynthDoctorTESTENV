@@ -29,7 +29,7 @@ router.get("/projects",  isAdmin, async (req, res, next) => {
       if (one.status === 0 || one.status == 1 || one.status == 5)
         pending.push(one);
       else if (one.status == 2 || one.status == 3) active.push(one);
-      else if (one.status == 4) closed.push(one);
+      else if (one.status == 4|| one.status == 4) closed.push(one);
     }
     res.render("admin-projects", { pending, active, closed,  userInSession: req.session.currentUser});
   });
