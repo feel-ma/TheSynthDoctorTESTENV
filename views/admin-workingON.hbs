@@ -90,11 +90,23 @@
   </script>
     </div>
     <div class="col mx-auto px-3">
-      <strong>Calculated Price:</strong> {{work.calculatedPrice}}
+    <strong>Total Price:</strong> {{totalPrice}}
     </div>
   </div>
 </div>
+<script>
+  // Assuming you have access to the work object and its properties
+  const totalUsedPrice = {{totalUsedPrice}}; // Replace this with the actual total price of used parts
+  const hourlyRate = 60; // Hourly rate in euros
+  const fixedFee = 30; // Fixed fee in euros
+  const hoursWorked = {{work.hours}}; // Replace with actual hours worked
 
+  const hoursPrice = hoursWorked * hourlyRate;
+  const totalPrice = totalUsedPrice + hoursPrice + fixedFee;
+
+  // Update the total price in the document
+  document.write(totalPrice);
+</script>
 
 <div class="container">
   <h1 class="case-heading">CASE DESCRIPTION</h1>
@@ -323,33 +335,6 @@ function save() {
 
 
 <script>
-
-function toggleTableP() {
-  let table = document.getElementById("pending-table");
-  if (table.style.display === "none") {
-    table.style.display = "table";
-  } else {
-    table.style.display = "none";
-  }
-}
-
-function toggleTableW() {
-  let table = document.getElementById("working-table");
-  if (table.style.display === "none") {
-    table.style.display = "table";
-  } else {
-    table.style.display = "none";
-  }
-}
-
-function toggleTableC() {
-  let table = document.getElementById("closed-table");
-  if (table.style.display === "none") {
-    table.style.display = "table";
-  } else {
-    table.style.display = "none";
-  }
-}
 
 function getStatusColor(status) {
   switch (status) {
