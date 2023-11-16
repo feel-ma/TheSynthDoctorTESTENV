@@ -25,7 +25,7 @@ router.get("/projects",  isAdmin, async (req, res, next) => {
   const closed = [];
   let messages = []
 
-  const admin = await User.findOne({ email: "fmelectronicsbln@gmail.com" }); 
+  //const admin = await User.findOne({ email: "test@test.test" }); 
 
 
   if(admin.messages){
