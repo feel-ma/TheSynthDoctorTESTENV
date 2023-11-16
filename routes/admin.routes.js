@@ -27,7 +27,11 @@ router.get("/projects",  isAdmin, async (req, res, next) => {
 
   const admin = await User.findOne({ email: "fmelectronicsbln@gmail.com" }); 
 
-  messages = admin.messages
+
+  if(admin.messages){
+    messages = admin.messages
+  }
+
 
   Repair.find().then((result) => {
     for (one of result) {
