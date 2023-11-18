@@ -44,12 +44,12 @@
 
       <div class="col">
         <h1>Status</h1>
-        <div class="status" data-status="{{work.status}}">.</div>
+        <div class="status" data-status="{{work.status}}">{{getStatusWord(this.status)}}</div>
       </div>
 
       <div class="col">
         <h1>Urgency</h1>
-        <div class="urgency" data-status="{{work.urgency}}">.</div>
+        <div class="urgency" data-status="{{work.urgency}}">{{getUrgencyWord(this.urgency)}}</div>
       </div>
     </div>
   </div>
@@ -371,6 +371,41 @@ function checkUrgency(urgencyDiv) {
   let color = getUrgencyColor(status);
   urgencyDiv.style.backgroundColor = color;
 }
+
+function getUrgencyWord(urgency) {
+  switch (urgency) {
+    case 1:
+      return "Low";
+    case 2:
+      return "Medium";
+    case 3:
+      return "High";
+    default:
+      return "Unknown";
+  }
+}
+
+function getStatusWord(status) {
+  switch (status) {
+    case 0:
+      return "Waiting approval";
+    case 1:
+      return "Accepted";
+    case 2:
+      return "Delivered";
+    case 3:
+      return "In progress";
+    case 4:
+      return "Ready";
+    case 5:
+      return "More info";
+    case 6:
+      return "Status 6";
+    default:
+      return "Closed ticket";
+  }
+}
+
 
 
 function getUrgencyColor(urgency) {

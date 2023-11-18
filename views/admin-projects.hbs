@@ -24,11 +24,11 @@
             </td>
          <td>{{this.brand}}</td>
           <td>
-             <div class="urgency" data-status="{{this.urgency}}"> {{this.urgency}} </div>
+             <div class="urgency" data-status="{{this.urgency}}"> {{getUrgencyWord(this.urgency)}}</div>
 </td> 
 
 <td>
-   <div class="status" data-status="{{this.status}}" height="20px" width="20px"> {{this.status}}</div>
+   <div class="status" data-status="{{this.status}}" height="20px" width="20px"> {{getStatusWord(this.status)}}</div>
 
 </td> 
            <td>{{this.droppOffDate}}</td>
@@ -169,6 +169,41 @@ function getStatusColor(status) {
       return "black";
   }
 }
+
+function getUrgencyWord(urgency) {
+  switch (urgency) {
+    case 1:
+      return "Low";
+    case 2:
+      return "Medium";
+    case 3:
+      return "High";
+    default:
+      return "Unknown";
+  }
+}
+
+function getStatusWord(status) {
+  switch (status) {
+    case 0:
+      return "Waiting approval";
+    case 1:
+      return "Accepted";
+    case 2:
+      return "Delivered";
+    case 3:
+      return "In progress";
+    case 4:
+      return "Ready";
+    case 5:
+      return "More info";
+    case 6:
+      return "Status 6";
+    default:
+      return "Closed ticket";
+  }
+}
+
 
 function checkStatus(statusDiv) {
   let status = parseInt(statusDiv.dataset.status);
