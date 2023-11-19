@@ -24,11 +24,11 @@
             </td>
          <td>{{this.brand}}</td>
           <td>
-             <div class="urgency" data-status="{{this.urgency}}"> {{getUrgencyWord(this.urgency)}}</div>
+             <div class="urgency" data-status="{{this.urgency}}"> {{this.urgency}} </div>
 </td> 
 
 <td>
-   <div class="status" data-status="{{this.status}}" height="20px" width="20px"> {{getStatusWord(this.status)}}</div>
+   <div class="status" data-status="{{this.status}}" height="20px" width="20px"> {{this.status}}</div>
 
 </td> 
            <td>{{this.droppOffDate}}</td>
@@ -198,9 +198,9 @@ function getStatusWord(status) {
     case 5:
       return "More info";
     case 6:
-      return "Status 6";
-    default:
       return "Closed ticket";
+    default:
+      return "0";
   }
 }
 
