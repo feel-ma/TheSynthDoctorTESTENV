@@ -28,6 +28,6 @@ Welcome to TheSynthDoctor, your go-to platform for seamless synthesizer repairs.
 Explore TheSynthDoctor:
 
 - [Visit TheSynthDoctor Website](https://www.thesynthdoctor.de/) (Note: The website is currently in development and will be live soon.)
-- [Test Account Access](#) (Feel free to explore the features using the provided test account credentials.)
+- [Test Account Access](https://thesynthdoctortestenv.onrender.com/repair) (Feel free to explore the features using the provided test account credentials... This is a different deploy from my real website, it will go Idle after 15 min, so give him some time to wake up) Username: TestAdmin  Password Test1234
 
 Your feedback and insights are highly valued as they contribute to enhancing the functionality and user experience of this cutting-edge application.
